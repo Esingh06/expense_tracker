@@ -32,10 +32,10 @@ class _ExpensesState extends State<Expenses>{
       body: Column(
          children: [
             Text("Chart goes here"),
-            SizedBox(
-              height: 300,
-       child: ExpensesList(expenses : _registeredExpenses)),
-      ],
+            Expanded(
+              child: ExpensesList(expenses : _registeredExpenses),
+            )
+         ],
       ),
     );
   }
