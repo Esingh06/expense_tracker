@@ -9,6 +9,7 @@ class NewExpense extends StatefulWidget{
 }
 class _NewExpenseState extends State<NewExpense>{
 final _titleController = TextEditingController();
+ final _priceController = TextEditingController();
 
 
   @override
@@ -24,12 +25,19 @@ final _titleController = TextEditingController();
             label: Text('Title'),
           ),
         ),
-        Row(children: [
-          
-        ],)
+        TextField(
+          controller: _priceController,
+          keyboardType: TextInputType.number,
+          decoration: InputDecoration(
+            prefixText: '\$',
+            label: Text('Amount'),
+          ),    
+        ),
         Row(children: [
           ElevatedButton(onPressed: (){
+            
             print(_titleController.text);
+            print(_priceController.text);
           }, child: Text('Save Expense')),
         ],)
       ],
